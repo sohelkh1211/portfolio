@@ -49,11 +49,11 @@ const tech = () => {
             </div>
             {/* <div className="relative w-full lg:top-[78px] md:top-[84px] sm:top-[88px] border border-red-700"></div> */}
             <ArrowCircleLeftIcon fontSize="large" onClick={prevSlide} className="relative lg:ml-[25%] md:ml-[18%] sm:ml-[12%] xs:ml-[78%] lg:top-[60px] md:top-[66px] sm:top-[70px] xs:top-[150px] border-none border-green-800 cursor-pointer" />
-            <ArrowCircleRightIcon fontSize="large" onClick={nextSlide} className="relative lg:ml-[44.6%] md:ml-[57%] sm:ml-[67%] xs:ml-[87%] lg:top-[59.4px] md:top-[66px] sm:top-[70px] xs:top-[114px] cursor-pointer" />
+            <ArrowCircleRightIcon fontSize="large" onClick={nextSlide} className="relative lg:ml-[44.6%] md:ml-[57%] sm:ml-[67%] xs:ml-[87%] lg:top-[59.2px] md:top-[66px] sm:top-[70px] xs:top-[114px] cursor-pointer" />
             <div className="relative lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[90%] sm:top-[160px] xs:top-[140px] lg:ml-[25%] md:ml-[20%] sm:ml-[16%] xs:ml-[6%] lg:pl-[6%] md:pl-[8%] sm:pl-[5%] xs:pl-[5%] flex flex-row flex-wrap sm:gap-x-12 xs:gap-x-6 gap-y-6 border-none border-green-900 justify-start">
                 {technologies.map((technology) => (
                     <div className="sm:w-[14.55%] xs:w-[18%] pb-2 border-none rounded-lg border-red-900 overflow-hidden tech ease-in-out cursor-pointer" onClick={() => setCurrent(technologies.indexOf(technology))} key={technology.name}>
-                        <img src={technology.icon} className="w-[70%] mx-auto mt-3 hover:scale-[1.1] duration-1000" />
+                        <img src={technology.icon} className="w-[70%] mx-auto mt-3 hover:scale-[1.1] transition ease-out duration-1000" />
                     </div>
                 ))}
             </div>

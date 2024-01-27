@@ -23,10 +23,10 @@ const About = () => {
         <div className='absolute flex flex-col sm:top-[440px] xs:top-[350px] w-[75%] h-[120%] ml-[15%] border-none border-green-800'>
           <p className=''>Hello World 👋, Sohel here. I'm a skilled web developer and Data Analyst with a focus on front-end, Motion, Interactive 3D Designs, Data visualization, Statistical analysis and SQL. My proficiency includes languages such as HTML, CSS, JavaScript, and Python. In additon to these technologies, I have expertise in font-end framework such as Reactjs and styling using Tailwind CSS.</p>
           <p className='list-item pt-10'>I am currently pursuing a 4-year Bachelor's program in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning.</p>
-          <p className=' list-item pt-10'>I have a proven track record of designing and developing responsive, user-friendly websites. Apart from these, I'm also interested in working with complex datasets to extract meaningful insights.</p>
+          <p className='list-item pt-10'>I have a proven track record of designing and developing responsive, user-friendly websites. Apart from these, I'm also interested in working with complex datasets to extract meaningful insights.</p>
           <p className='list-item pt-10'>In my free time, I enjoy watching mind-blowing Netflix web series and exploring new places and cultures that inspire me.</p>
         </div>
-        <div className='absolute flex lg:top-[280%] md:top-[310%] sm:top-[330%] xs:top-[540%] lg:ml-[36%] md:ml-[30%] sm:ml-[25%] xs:ml-[10%] w-fit mb-1 border-none border-green-800'>
+        <div className='absolute flex lg:top-[280%] md:top-[310%] sm:top-[330%] xs:top-[550%] lg:ml-[36%] md:ml-[30%] sm:ml-[25%] xs:ml-[10%] w-fit mb-1 border-none border-green-800'>
           <p className='sm:text-[35px] xs:text-[28px] thanks'>💫 Thanks for visiting 💫</p>
         </div>
         <div className='absolute flex top-[880px] w-[20%] h-[10%]'>

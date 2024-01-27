@@ -16,7 +16,7 @@ const Body = () => {
           & Data Analysis. I'm always eager to learn new technologies.
         </p>
       </div>
-        <div className="container flex-col top-56 c-scroll-icon scroll-smooth" onClick={() => window.scrollTo(0,400)}>
+        <div className="container flex-col sm:top-56 xs:top-[275px] c-scroll-icon scroll-smooth" onClick={() => window.scrollTo(0,400)}>
           <div className="c-scroll-icon-line-mask">
             <div className="c-scroll-icon-line"></div>
           </div>

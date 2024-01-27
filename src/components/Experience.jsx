@@ -86,7 +86,7 @@ const Experience = () => {
     return (
         <>
             <TabTitle newtitle="Sohel Khan | Portfolio" />
-            <div className="absolute flex flex-col sm:flex top-[550px] lg:mt-6 sm:left-[40%] xs:left-[30%] items-center mx-auto">
+            <div className="absolute flex flex-col sm:flex top-[550px] lg:mt-6 sm:left-[40%] xs:left-[23%] items-center mx-auto">
                 <Tilt>
                     <div className="flex flex-col m-4 p-6 w-40 h-40 rounded-xl fun-gradient1">
                         <div className="container flex m-0.8 w-11 h-11 items-center justify-center mx-auto">

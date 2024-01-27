@@ -22,7 +22,7 @@ const Work = () => {
                 <p className="text-[50px] text-transparent bg-clip-text bg-gradient-to-tr from-[#B621FE] to-[#1FD1F9]">Projects</p>
             </div>
             <div className="relative flex top-[115px] lg:w-[33%] md:w-[45%] sm:w-[55%] xs:w-[70%] xs:mx-auto border-none border-green-900">
-                <p className="sm:text-[16px] xs:text-[14px]">Here is the list of projects ✨ that I've built 📃 so far. Kindly take a look. Thank you 😊</p>
+                <p className="sm:text-[16px] tech-font xs:text-[14px]">Here is the list 📃 of projects ✨ that I've built ⚒️ so far. Kindly take a look. Thank you 😊</p>
             </div>
             <div className="relative flex flex-row flex-wrap top-[165px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl">
                 <div className='sm:absolute xs:relative flex container1 sm:w-[34%] xs:w-[90%] md:h-[110px] mt-[20px] sm:ml-[3%] xs:mx-auto rounded-xl overflow-hidden cursor-pointer border-none border-black'>

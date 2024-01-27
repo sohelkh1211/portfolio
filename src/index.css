@@ -269,7 +269,7 @@
     height: 90px;
     transform: translate3d(-50%, 0%, 0);
     position: absolute;
-    left: 52%;
+    left: 51%;
     bottom: 100px;
     backface-visibility: hidden;
   }
@@ -281,7 +281,7 @@
     height: 90px;
     transform: translate3d(-50%, 0%, 0);
     position: absolute;
-    left: 50%;
+    left: 40%;
     bottom: 100px;
     backface-visibility: hidden;
   }
