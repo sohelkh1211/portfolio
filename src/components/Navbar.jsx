@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { navLinks } from "../constants";
 import Resume from '../assets/Resume.pdf';
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 import { TabTitle } from "../constants";
 
@@ -21,6 +21,9 @@ const Navbar = () => {
           className="flex items-center"
           onClick={() => {
             window.scrollTo(0, 0);
+            if(toggle){
+              setToggle(!toggle);
+            }
             setActive("");
           }}
         >
@@ -56,7 +59,7 @@ const Navbar = () => {
         <motion.button
           initial={{ rotate: 0 }}
           animate={{ rotate: 180 }}
-          transition={{ type: "keyframes", duration: 1, delay: 1}}
+          transition={{ type: "spring", duration: 1, delay: 1 }}
           className="sm:hidden md:hidden lg:hidden group relative"
           onClick={() => setToggle(!toggle)}
         >
@@ -78,9 +81,29 @@ const Navbar = () => {
             ></div>
           </div>
         </motion.button>
-        <div
-          className={`${toggle ? "flex slide-down" : "hidden"
-            } absolute top-[65px] right-0 z-10 border bg-white w-full h-auto rounded-2xl flex-col sm:hidden`}
+        <motion.div
+          className={`flex absolute top-[65px] right-0 z-10 border bg-white w-full h-auto rounded-2xl flex-col sm:hidden`}
+          animate = { toggle ? "show_1" : "hide"}
+          variants={{
+            hide: {
+              x: -100,
+              opacity: 0,
+              transition: {
+                type: "spring",
+                duration: 1,
+                delay: 0.2,
+              }
+            },
+            show_1:{
+              x: 0,
+              opacity: 1,
+              transition: {
+                type: "spring",
+                duration: 1.5,
+                delay: 0.2,
+              }
+            }
+          }}
         >
           <ul className={`list-none flex flex-col justify-between gap-4 px-4 py-3`}>
             {navLinks.map((link) => (
@@ -101,7 +124,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </motion.div>
     </nav>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { color, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Tilt } from 'react-tilt'
 import { experience } from "../constants";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
@@ -88,14 +88,22 @@ const Experience = () => {
             <TabTitle newtitle="Sohel Khan | Portfolio" />
             <div className="absolute flex flex-col sm:flex top-[550px] lg:mt-6 sm:left-[40%] xs:left-[23%] items-center mx-auto">
                 <Tilt>
-                    <div className="flex flex-col m-4 p-6 w-40 h-40 rounded-xl fun-gradient1">
+                    <motion.div className="flex flex-col m-4 p-6 w-40 h-40 rounded-xl fun-gradient1"
+                        initial={{ pathLength: 0, opacity: 0}} 
+                        animate={{ pathLength: 1, opacity: 1 }}
+                        // onScroll={{ pathLength: 1, opacity: 1}}
+                        transition={{
+                            default: { duration: 4, ease: "easeInOut" },
+                            fill: { duration: 4, ease: [1, 0, 0.8, 1] }
+                        }}
+                    >
                         <div className="container flex m-0.8 w-11 h-11 items-center justify-center mx-auto">
                             <h1 className="font-bold text-[40px] stylish_number">04</h1>
                         </div>
                         <div className="container flex w-22 h-18 mx-auto mt-7">
                             <p className="font-bold text-[13px] text-white">Years of learning Experience</p>
                         </div>
-                    </div>
+                    </motion.div>
                 </Tilt>
             </div>
             <div className="container absolute top-[780px] mx-auto xs:left-[0.1%] xs:right-[1%] flex flex-row items-center justify-center">
