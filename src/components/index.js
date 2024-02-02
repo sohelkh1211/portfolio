@@ -8,6 +8,7 @@ import Work from './Work';
 import Body from './Body';
 import Experience from './Experience';
 import Tech from './Tech';
+import Footer from './Footer';
 
 export {
     About,
@@ -17,4 +18,5 @@ export {
     Body,
     Experience,
     Tech,
+    Footer,
 };

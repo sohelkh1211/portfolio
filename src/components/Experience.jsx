@@ -1,11 +1,10 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { motion, useInView } from 'framer-motion'
+import { useState, useEffect } from "react";
+import { motion } from 'framer-motion'
 import { Tilt } from 'react-tilt'
 import { experience } from "../constants";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { lazy } from "react";
 import { TabTitle } from "../constants";
 
 const ExperienceCard = ({ experience }) => {
@@ -19,6 +18,24 @@ const ExperienceCard = ({ experience }) => {
         window.innerWidth,
         window.innerHeight,
     ]);
+
+    const [view, setView] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if(window.scrollY >= 800 && window.scrollY <= 2100) {
+                setView(true);
+            }
+            else {
+                setView(false);
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll',handleScroll);
+        }
+    }, []);
 
     useEffect(() => {
         const handleWindowResize = () => {
@@ -36,7 +53,7 @@ const ExperienceCard = ({ experience }) => {
     return (
         <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ hover: 'color:red', width: '350px', ...{ ...size <= 580 ? width1 : '' }, display: 'flex', ... { ...size >= 1280 ? marginLeft1 : marginLeft2 }, ... { ...size >= 1280 ? marginRight1 : marginRight2 } }}
+            contentStyle={{ hover: 'scale:1.2', width: '350px', ...{ ...size <= 580 ? width1 : '' }, display: 'flex', ... { ...size >= 1280 ? marginLeft1 : marginLeft2 }, ... { ...size >= 1280 ? marginRight1 : marginRight2 } }}
             // contentArrowStyle={{ borderRight: "7px solid green" }}
             iconStyle={{ display: 'none' }}
         >
@@ -52,26 +69,27 @@ const ExperienceCard = ({ experience }) => {
                         </li>
                     ))}
                 </ul>
-                <div className="mt-2 justify-between sm:space-x-3 xs:space-x-2">
+                <motion.div className="mt-2 justify-between sm:space-x-3 xs:space-x-2">
                     {experience.buttons.map((button, index) => (
-                        <button
+                        <motion.button
                             key={`experience-button-${index}`}
-                            className={`${experience.title === 'Python Programming' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-r from-[#83EAF1] to-[#60A5FA] hover:shadow-blue-400 hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Web Dev' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-r from-[#AD1DEB] to-[#6E72FC] hover:shadow-[#AD1DEB] hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Machine learning' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[12px] xs:text-[10px] bg-gradient-to-tr from-[#20DED3] to-[#F6FBA2] hover:shadow-emerald-400 hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Data Science' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-tr from-[#B0F3F1] to-[#FFCFDF] hover:shadow-[#B0F3F1] hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} `}>{button}</button>
+                            initial={{ opacity: 0, translateX: -100 }}
+                            animate={{ opacity: view ? 1 : 0, translateX: view ? 0 : -100 }}
+                            transition={{
+                                type: "spring",
+                                duration: 0.7,
+                                delay: index
+                            }}
+                            className={`${experience.title === 'Python Programming' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-r from-[#83EAF1] to-[#60A5FA] hover:shadow-blue-400 hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Web Dev' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-r from-[#AD1DEB] to-[#6E72FC] hover:shadow-[#AD1DEB] hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Machine learning' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[12px] xs:text-[10px] bg-gradient-to-tr from-[#20DED3] to-[#F6FBA2] hover:shadow-emerald-400 hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Data Science' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-tr from-[#B0F3F1] to-[#FFCFDF] hover:shadow-[#B0F3F1] hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} `}>{button}</motion.button>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </VerticalTimelineElement>
     )
 }
 
 const Experience = () => {
-    const [windowSize, setWindowSize] = useState([
-        window.innerWidth,
-        window.innerHeight,
-    ]);
     const [view, setView] = useState(false);
-    const ref = useRef(null);
-    const isInView = useInView(ref);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -88,19 +106,6 @@ const Experience = () => {
         }
     }, []);
 
-    useEffect(() => {
-        const handleWindowResize = () => {
-            setWindowSize([window.innerWidth, window.innerHeight]);
-        };
-
-        window.addEventListener('resize', handleWindowResize);
-
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-    const size = windowSize[0];
-
     return (
         <>
             <TabTitle newtitle="Sohel Khan | Portfolio" />
@@ -109,7 +114,7 @@ const Experience = () => {
                     {/* Specify view only for animate  */}
                     {/* initial means origin of animation and animate means the end position of animation */}
                     {/* Note :- view ? value1: value2. Here, the value2 should be the value of initial. E.g :- value of opacity in initial is 0. Therefore, in animate value2 of opacity should be 0. */}
-                    <motion.div ref={ref} className="flex flex-col m-4 p-6 w-40 h-40 rounded-xl fun-gradient1"
+                    <motion.div className="flex flex-col m-4 p-6 w-40 h-40 rounded-xl fun-gradient1"
                         initial={{ opacity: 0, translateX: -1000 }}
                         animate={{ opacity: view ? 1 : 0, translateX: view ? 0 : -1000 }}
                         transition={{
