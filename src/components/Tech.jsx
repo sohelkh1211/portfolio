@@ -4,6 +4,7 @@ import { TabTitle } from "../constants";
 import { useState } from "react";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import Footer from "./Footer";
 
 const tech = () => {
     const [current, setCurrent] = useState(0);
@@ -57,8 +58,7 @@ const tech = () => {
                     </div>
                 ))}
             </div>
-
-
+            <Footer space_above={180} />
         </>
     )
 }

@@ -13,6 +13,7 @@ import Fitness from '../assets/Fitness Exercise App.png'
 import Plant from '../assets/Plant.jpg'
 import Portfolio from '../assets/Portfolio.png'
 import { TabTitle } from '../constants'
+import Footer from './Footer'
 
 const Work = () => {
     return (
@@ -87,7 +88,8 @@ const Work = () => {
                 </div>
                 <p className="sm:pl-[40%] xs:pl-[5%] pt-[2%] pb-[4%] lg:text-[15px] md:text-[14px] sm:text-[13px] xs:text-[15px] fitness-about">I have developed a dynamic, creative, and visually engaging portfolio, showcasing my proficiency in crafting innovative UI designs.</p>
             </div>
-            <div className='relative flex top-[100px] border'></div>
+            {/* <div className='relative flex top-[100px] border'></div> */}
+            <Footer space_above={120} />
         </>
     )
 }

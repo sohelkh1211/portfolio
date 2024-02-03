@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@1,100&family=Lora&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -60,7 +62,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .love {
-  font-family: 'Lora', serif;
+  /* font-family: 'Lora', serif; */
 }
 
 .thanks {
