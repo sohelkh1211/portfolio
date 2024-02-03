@@ -10,7 +10,7 @@ const Contact = () => {
 
     return (
         <>
-            <div className="relative flex flex-col rounded-[25px] mx-auto bg-gradient-to-tr from-[#d49af4] to-[#7EE8FA] sm:w-[60%] sm:h-[240px] xs:w-[70%] xs:h-[220px] md:h-[280px] sm:top-[1100px] xs:top-[1020px]">
+            <div className="relative flex flex-col rounded-[25px] mx-auto bg-gradient-to-tr from-[#d49af4] to-[#7EE8FA] sm:w-[60%] sm:h-[240px] xs:w-[70%] xs:h-[220px] md:h-[280px] sm:top-[1100px] xs:top-[1080px]">
                 <div className="flex flex-row lg:w-[50%] md:w-[60%] md:h-[60px] xs:h-[40px] xs:ml-6 mt-7 md:ml-10 justify-start">
                     <h1 className="lg:text-[40px] md:text-[35px] sm:text-[30px] xs:text-[30px] bg-gradient-to-tr from-[#6366f1] to-[#3c366b] bg-clip-text text-transparent">Get In Touch</h1>
                 </div>
