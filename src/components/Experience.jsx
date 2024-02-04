@@ -69,7 +69,7 @@ const ExperienceCard = ({ experience }) => {
                         </li>
                     ))}
                 </ul>
-                <motion.div className="mt-2 justify-between sm:space-x-3 xs:space-x-2">
+                <div className="mt-2 justify-between sm:space-x-3 xs:space-x-2">
                     {experience.buttons.map((button, index) => (
                         <motion.button
                             key={`experience-button-${index}`}
@@ -82,7 +82,7 @@ const ExperienceCard = ({ experience }) => {
                             }}
                             className={`${experience.title === 'Python Programming' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-r from-[#83EAF1] to-[#60A5FA] hover:shadow-blue-400 hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Web Dev' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-r from-[#AD1DEB] to-[#6E72FC] hover:shadow-[#AD1DEB] hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Machine learning' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[12px] xs:text-[10px] bg-gradient-to-tr from-[#20DED3] to-[#F6FBA2] hover:shadow-emerald-400 hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} ${experience.title === 'Data Science' ? 'relative rounded-full sm:px-3 xs:py-0.5 xs:px-2 sm:text-[14px] xs:text-[12px] bg-gradient-to-tr from-[#B0F3F1] to-[#FFCFDF] hover:shadow-[#B0F3F1] hover:shadow-[0px_0px_30px_rgba(0,0,0,0.56)]' : ''} `}>{button}</motion.button>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </VerticalTimelineElement>
     )
