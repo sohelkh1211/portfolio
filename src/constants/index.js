@@ -10,7 +10,7 @@ import mongodb from '../assets/mongodb.png';
 import threejs from '../assets/threejs.svg';
 import sql from '../assets/sql.png';
 import tensorflow from '../assets/tensorflow.png';
-import github from '../assets/GitHub.png';
+import github from '../assets/github.png';
 import figma from '../assets/figma.png';
 
 
