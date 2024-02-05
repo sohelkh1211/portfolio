@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ML from "../assets/ml.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 

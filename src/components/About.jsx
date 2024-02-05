@@ -1,13 +1,22 @@
 import pic from '../assets/KHAN Sohel.jpg'
 import { TabTitle } from '../constants';
+import { motion } from 'framer-motion';
 
 const About = () => {
+  const text = "About ";
+  const text_split = text.split("");
+  console.log(text_split);
+
   return (
     <>
       <TabTitle newtitle="About Me" />
       <div className="relative flex top-20 w-full">
         <div className="flex flex-col lg:ml-[40%] md:ml-[32%] sm:ml-[30%] xs:ml-[15%] border-none border-green-800">
-          <h1 className="sm:text-[55px] xs:text-[40px] fun-gradient pl-[24%]">About</h1>
+          <motion.div style={{ overflow: "hidden", display: "flex" }}>
+            {text_split.map((element, index) => (
+              <motion.h1 key={index} className="flex sm:mr-[-65px] xs:mr-[-67px] sm:text-[55px] xs:text-[40px] fun-gradient pl-[24%]">{element}</motion.h1>
+            ))}
+          </motion.div>
           <img className='pt-3 sm:w-[54%] sm:h-[60%] xs:w-[38%] xs:h-[60%] xs:ml-[25%] mx-auto' src={pic}></img>
         </div>
         <div className='absolute flex flex-col xs:top-[200px] sm:top-[270px] sm:w-[35%] sm:h-[30%] xs:w-[35%] border-none border-green-900 lg:ml-[35.8%] md:ml-[34%] sm:ml-[38.5%] xs:ml-[32%]'>
