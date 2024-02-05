@@ -1,4 +1,4 @@
-import pic from '../assets/KHAN Sohel.jpg'
+import pic from '../assets/KHAN_Sohel.jpg'
 import { TabTitle } from '../constants';
 import { motion } from 'framer-motion';
 
