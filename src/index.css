@@ -51,6 +51,11 @@ html::-webkit-scrollbar-thumb {
   background-color: #be6ff2;
 }
 
+.prof {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
 .nav-sohel {
   font-family: "Diphylleia";
 }
