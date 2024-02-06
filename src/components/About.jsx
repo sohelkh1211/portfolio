@@ -5,22 +5,28 @@ import { motion } from 'framer-motion';
 const About = () => {
   const text = "About ";
   const text_split = text.split("");
-  console.log(text_split);
+
+  const name = "Sohel Khan";
+  const name_split = name.split("");
 
   return (
     <>
       <TabTitle newtitle="About Me" />
       <div className="relative flex top-20 w-full">
         <div className="flex flex-col lg:ml-[40%] md:ml-[32%] sm:ml-[30%] xs:ml-[15%] border-none border-green-800">
-          <motion.div style={{ overflow: "hidden", display: "flex" }}>
+          <motion.div className='flex overflow-hidden'>
             {text_split.map((element, index) => (
-              <motion.h1 key={index} className="flex sm:mr-[-65px] xs:mr-[-67px] sm:text-[55px] xs:text-[40px] fun-gradient pl-[24%]">{element}</motion.h1>
+              <motion.h1 key={index} initial = {{ opacity: 0, translateY: -100 }} animate = {{ opacity: 1, translateY: 0 }} transition={{ duration: 0.7, delay: index*0.1 }} className="flex sm:mr-[-66px] xs:mr-[-67px] sm:text-[55px] xs:text-[40px] fun-gradient pl-[24%]">{element}</motion.h1>
             ))}
           </motion.div>
-          <img className='pt-3 sm:w-[54%] sm:h-[60%] xs:w-[38%] xs:h-[60%] xs:ml-[25%] mx-auto' src={pic}></img>
+          <motion.img initial = {{ opacity: 0, scale: 0.002 }} animate = {{ opacity: 1, scale: 1 }} transition={{ duration: 1.5, delay: 0.2 }} className='mt-2 sm:w-[54%] sm:h-[60%] xs:w-[38%] xs:h-[60%] xs:ml-[25%] rounded-xl mx-auto' src={pic}></motion.img>
         </div>
         <div className='absolute flex flex-col xs:top-[200px] sm:top-[270px] sm:w-[35%] sm:h-[30%] xs:w-[35%] border-none border-green-900 lg:ml-[35.8%] md:ml-[34%] sm:ml-[38.5%] xs:ml-[32%]'>
-          <p className="md:text-[30px] sm:text-[25px] xs:text-[20px] lg:pl-[28.7%] md:pl-[21%] sm:pl-[9%] xs:pl-[10%]">Sohel Khan</p>
+          <motion.span className='flex overflow-hidden'>
+            {name_split.map((element, index) => (
+              <motion.p key={index} initial = {{ opacity: 0, translateY: 100 }} animate = {{ opacity: 1, translateY: 0 }} transition={{ duration: 0.7, delay: index*0.1 }} className="md:text-[30px] sm:text-[25px] xs:text-[20px] sm:mr-[-127.5px] xs:mr-[-12px] lg:pl-[28.7%] md:pl-[21%] sm:pl-[9%] xs:pl-[10%]">{`${element === " " ? "\u00A0": element}`}</motion.p>
+            ))}
+          </motion.span>
           <p className='pt-1 lg:pl-[34.5%] md:pl-[29%] sm:pl-[14%] xs:pl-[13.4%] xs:text-[14px] sm:text-[16px] font-medium text-gray-700'>Web Developer</p>
         </div>
         <div className='absolute flex flex-row sm:top-[370px] xs:top-[270px] mx-auto justify-between sm:px-8 xs:py-2 sm:gap-12 xs:gap-6 border-none border-green-900 lg:ml-[30%] md:ml-[15%] sm:ml-[13%] xs:ml-[10%]'>
