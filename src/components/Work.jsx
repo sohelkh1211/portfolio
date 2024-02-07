@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact } from '@fortawesome/free-brands-svg-icons'
 import { faSquareJs } from '@fortawesome/free-brands-svg-icons'
 import { faPython } from '@fortawesome/free-brands-svg-icons'
+import { motion } from 'framer-motion'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import numpy from '../assets/numpy.png'
 import pandas from '../assets/pandas.svg'
 import materialui from '../assets/material-ui.png'
@@ -13,20 +15,69 @@ import Plant from '../assets/Plant.jpg'
 import Portfolio from '../assets/Portfolio.png'
 import { TabTitle } from '../constants'
 import Footer from './Footer'
+import { TypeAnimation } from 'react-type-animation'
 
 const Work = () => {
+    const text = "Projects";
+    const text_split = text.split("");
+    const ref1 = useRef(null); // To get referrence to Fitness Project div.
+
+    const useInView = (ref) => {
+        const [isIntersecting, setIsIntersecting] = useState(false); // Initialize state variable to track visibility
+        // Create an IntersectionObserver object using useMemo to memoize it
+        const observer = useMemo(
+            () =>
+                new IntersectionObserver(([entry]) =>
+                    setIsIntersecting(entry.isIntersecting),
+                ),
+            [],
+        );
+        // Observe the target element using useEffect
+        useEffect(() => {
+            // Since, we are using this function for multiple DOM element i.e div. Hence, we used current.
+            observer.observe(ref.current);
+            // Cleanup function to disconnect the observer when component unmounts or ref changes
+            return () => {
+                observer.disconnect();
+            };
+        }, [ref, observer]);
+
+        return isIntersecting;
+    }
+    const isInView1 = useInView(ref1);
+    const fade = (view, x) => {
+        return {
+            hidden: {
+                opacity: 0,
+                translateX: -200
+            },
+            visible: {
+                opacity: view ? 1 : 0,
+                translateX: view ? 0 : -200,
+                transition: {
+                    duration: 1,
+                    delay: x,
+                }
+            }
+        }
+    }
+
     return (
         <>
             <TabTitle newtitle="Projects 💫" />
             <div className="relative flex top-[90px] xs:mx-auto w-fit h-fit border-none border-green-900">
-                <p className="text-[50px] text-transparent bg-clip-text bg-gradient-to-tr from-[#B621FE] to-[#1FD1F9]">Projects</p>
+                <motion.div className='flex overflow-hidden'>
+                    {text_split.map((x, s) => (
+                        <motion.p key={s} initial={{ opacity: 0, rotate: -55 }} animate={{ opacity: 1, rotate: 0 }} transition={{ duration: 0.8, delay: (s + 1) * 0.2 }} className="text-[50px] text-transparent bg-clip-text bg-gradient-to-tr from-[#B621FE] to-[#1FD1F9]">{x}</motion.p>
+                    ))}
+                </motion.div>
             </div>
             <div className="relative flex top-[115px] lg:w-[33%] md:w-[45%] sm:w-[55%] xs:w-[70%] xs:mx-auto border-none border-green-900">
-                <p className="sm:text-[16px] tech-font xs:text-[14px]">Here is the list 📃 of projects ✨ that I've built ⚒️ so far. Kindly take a look. Thank you 😊</p>
+                <TypeAnimation sequence={[`Here is the list 📃 of projects ✨ that I've built ⚒️ so far. Kindly take a look. Thank you 😊`]} cursor={false} speed={75} className="sm:text-[16px] tech-font xs:text-[14px]" />
             </div>
-            <div className="relative flex flex-row flex-wrap top-[165px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl">
+            <div ref={ref1} className="relative flex flex-row flex-wrap top-[165px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl">
                 <div className='sm:absolute xs:relative flex container1 sm:w-[34%] xs:w-[90%] md:h-[110px] mt-[20px] sm:ml-[3%] xs:mx-auto rounded-xl overflow-hidden cursor-pointer border-none border-black'>
-                    <img src={Fitness} className='xs:w-full rounded-xl child' />
+                    <motion.img initial="hidden" animate="visible" variants={fade(isInView1, 0.4)} src={Fitness} className='xs:w-full rounded-xl child' />
                 </div>
                 <div className='relative flex items-center justify-between w-full mt-[20px] sm:ml-[40%] xs:ml-[5%] border-none border-green-500'>
                     <h1 className="font-bold fitness">Fitness Exercise App</h1>
