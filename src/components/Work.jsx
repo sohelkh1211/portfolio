@@ -21,6 +21,7 @@ const Work = () => {
     const text = "Projects";
     const text_split = text.split("");
     const ref1 = useRef(null); // To get referrence to Fitness Project div.
+    const ref2 = useRef(null);
 
     const useInView = (ref) => {
         const [isIntersecting, setIsIntersecting] = useState(false); // Initialize state variable to track visibility
@@ -45,17 +46,21 @@ const Work = () => {
         return isIntersecting;
     }
     const isInView1 = useInView(ref1);
-    const fade = (view, x) => {
+    const isInView2 = useInView(ref2);
+    const fade = (dir, view, x) => {
         return {
             hidden: {
                 opacity: 0,
-                translateX: -200
+                translateY: dir === "up" ? -200 : dir === "down" ? 200 : 0,
+                translateX: dir === "left" ? -200 : dir === "right" ? 200 : 0
             },
             visible: {
                 opacity: view ? 1 : 0,
-                translateX: view ? 0 : -200,
+                translateY: dir === "up" ? view ? 0 : -200 : dir === "down" ? view ? 0 : 200 : 0,
+                translateX: dir === "left" ? view ? 0 : -200 : dir === "right" ? view ? 0 : 200 : 0,
                 transition: {
-                    duration: 1,
+                    type: "spring",
+                    duration: 1.5,
                     delay: x,
                 }
             }
@@ -77,24 +82,24 @@ const Work = () => {
             </div>
             <div ref={ref1} className="relative flex flex-row flex-wrap top-[165px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl">
                 <div className='sm:absolute xs:relative flex container1 sm:w-[34%] xs:w-[90%] md:h-[110px] mt-[20px] sm:ml-[3%] xs:mx-auto rounded-xl overflow-hidden cursor-pointer border-none border-black'>
-                    <motion.img initial="hidden" animate="visible" variants={fade(isInView1, 0.4)} src={Fitness} className='xs:w-full rounded-xl child' />
+                    <motion.img initial="hidden" animate="visible" variants={fade("left",isInView1, 0.4)} src={Fitness} className='xs:w-full rounded-xl child' />
                 </div>
-                <div className='relative flex items-center justify-between w-full mt-[20px] sm:ml-[40%] xs:ml-[5%] border-none border-green-500'>
-                    <h1 className="font-bold fitness">Fitness Exercise App</h1>
-                    <div className="flex gap-x-2 lg:mr-4 xs:mr-2 border-none border-violet-600">
+                <div className='relative flex items-center justify-between w-full mt-[20px] sm:ml-[40%] xs:ml-[5%] overflow-hidden border-none border-green-500'>
+                    <motion.h1 initial="hidden" animate="visible" variants={fade("up",isInView1, 0.4)} className="font-bold fitness">Fitness Exercise App</motion.h1>
+                    <motion.div initial="hidden" animate="visible" variants={fade("up",isInView1, 0.4)} className="flex gap-x-2 lg:mr-4 xs:mr-2 border-none border-violet-600">
                         <FontAwesomeIcon className='w-[24px] h-full text-xl border-none border-black cursor-pointer' icon={faReact} />
-                        <svg className='w-[25px] border-none border-green-400 cursor-pointer' role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg initial={{ pathLength: 0, fill: "rgba(0,0,0,0)" }} animate={{ pathLength: 1, fill: "rgba(0,0,0,1)"}} className='w-[25px] border-none border-green-400 cursor-pointer' role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
                         </svg>
                         <img src={materialui} className='sm:hidden xs:w-[26px] xs:h-[24px] border-none border-black cursor-pointer' />
                         <img src={rapid} className='w-[25px] h-full border-none border-black fill-black cursor-pointer' />
-                    </div>
+                    </motion.div>
                 </div>
                 <p className="lg:text-[15px] md:text-[14px] sm:text-[13px] xs:text-[15px] sm:ml-[40%] sm:pb-[9%] xs:pb-3 xs:ml-[5%] mt-[2%] border-none border-blue-500 fitness-about">This is a dynamic web application which empower users on their fitness journeys.</p>
             </div>
-            <div className="relative flex flex-row flex-wrap top-[200px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl">
+            <div ref={ref2} className="relative flex flex-row flex-wrap top-[200px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl">
                 <div className='sm:absolute flex xs:relative container1 sm:w-[34%] md:h-[120px] xs:w-[90%] mt-[20px] sm:ml-[3%] xs:mx-auto border-none border-green-900 overflow-hidden rounded-xl cursor-pointer'>
-                    <img src={House} className='xs:w-full sm:h-full xs:h-[180px] rounded-xl child' />
+                    <motion.img initial="hidden" animate="visible" variants={fade("right",isInView2, 0.4)} src={House} className='xs:w-full sm:h-full xs:h-[180px] rounded-xl child' />
                 </div>
                 <div className='relative flex items-center justify-between w-full h-fit mt-[20px] sm:ml-[40%] xs:ml-[5%] border-none border-green-500'>
                     <h1 className="font-bold fitness">House Price Prediction</h1>
