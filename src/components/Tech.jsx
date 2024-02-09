@@ -2,13 +2,17 @@ import React from "react";
 import { technologies } from '../constants'
 import { TabTitle } from "../constants";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import Footer from "./Footer";
+import { TypeAnimation } from "react-type-animation";
 
 const tech = () => {
     const [current, setCurrent] = useState(0);
     const size = technologies.length;
+    const text = "Tech-Stack";
+    const text_split = text.split("");
 
     const nextSlide = () => {
         setCurrent(current === size - 1 ? 0 : current + 1);
@@ -26,12 +30,16 @@ const tech = () => {
         <>
             <TabTitle newtitle="Tech & Tools I've used" />
             <div className="relative top-[100px] md:w-[40%] lg:ml-[34%] md:ml-[28%] sm:ml-[20%] xs:ml-[2.2%] border-none border-blue-400 justify-center">
-                <p className="text-[50px] font-bold pl-[15%] text-transparent bg-clip-text bg-gradient-to-br from-[#F6EA41] to-[#f940cb]">
-                    Tech-Stack
-                </p>
+                <motion.span className="flex overflow-visible sm:ml-[15%] xs:ml-[13%]" >
+                    {text_split.map((ele, l) => (
+                        <motion.p key={l} initial={{ opacity: 0, rotateY: -180 }} animate={{ opacity: 1, rotateY: 0 }} transition={{ duration: 2, delay: (l+1)*0.2 }} className="text-[50px] font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#F6EA41] to-[#f940cb]">
+                            {ele}
+                        </motion.p>
+                    ))}
+                </motion.span>
             </div>
-            <div className="relative flex top-[120px] lg:w-[45%] md:w-[50%] sm:w-[60%] xs:w-[90%] xs:ml-[10%] sm:mx-auto border-none border-gray-600">
-                <p className="tech-font lg:text-[16px] md:text-[14px] sm:text-[14px] xs:text-[15px]">Throughout my educational journey 🎓, I've used variety of tools that have enriched my learning experience 👨‍💻.</p>
+            <div className="relative flex top-[120px] lg:w-[45%] md:w-[50%] sm:w-[60%] xs:w-[80%] xs:ml-[12%] sm:mx-auto border-none border-gray-600">
+                <TypeAnimation sequence={[`Throughout my educational journey 🎓, I've used variety of tools that have enriched my learning experience 👨‍💻.`]} speed={75} cursor={false} className="tech-font lg:text-[16px] md:text-[14px] sm:text-[14px] xs:text-[15px]"/>
             </div>
             <div className="relative top-[145px] flex flex-row lg:w-[40%] md:w-[52%] sm:w-[62%] xs:w-[82%] lg:ml-[30%] md:ml-[25%] sm:ml-[20%] xs:ml-[10%] pl-[2%] sm:py-3 xs:pb-4 slider border-none border-blue-700 rounded-xl">
                 {technologies.map((technology, index) => (

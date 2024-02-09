@@ -1,8 +1,6 @@
 import { About, Work, Contact, Navbar,Body, Experience,Tech } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import image from './components/header-gradient.png';
-import Resume from './assets/Resume.pdf'
-import Footer from "./components/Footer";
 
 {/* <div className="bg-cover bg-no-repeat bg-center"> */} // Used below image tag
 const App = () => {
