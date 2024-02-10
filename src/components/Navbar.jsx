@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { navLinks } from "../constants";
 import Resume from '../assets/Resume.pdf';
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 import { TabTitle } from "../constants";
 
