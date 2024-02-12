@@ -52,7 +52,7 @@ const Contact = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="absolute flex lg:w-[35%] lg:h-[75%] md:w-[30%] md:h-[75%] lg:mt-10 md:mt-12 lg:ml-[60%] md:ml-[65%] border-none border-red-500">
+                <div className="absolute md:flex xs:hidden lg:w-[35%] lg:h-[75%] md:w-[30%] md:h-[75%] lg:mt-10 md:mt-0.2 lg:ml-[60%] md:ml-[65%] border-none border-red-500">
                     <EarthCanvas />
                 </div>
             </div>

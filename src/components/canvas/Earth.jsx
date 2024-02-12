@@ -19,14 +19,15 @@ const Earth = () => {
                 setMatches(media.matches);
             }
     
-            window.addEventListener('change',listener);
+            media.addEventListener('change',listener);
             return () => {
-                window.removeEventListener('change',listener);
+                media.removeEventListener('change',listener);
             }
         }, [matches,query]);
         return matches;
     }
     const isLarge = useMediaQuery("(min-width: 1024px)");
+    console.log("For lg device :- ",isLarge);
     const isMedium = useMediaQuery("(min-width: 915px)");
     console.log(isMedium);
     const isSmall = useMediaQuery("(min-width: 650px)");
