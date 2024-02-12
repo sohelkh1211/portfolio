@@ -1,2 +1,2 @@
-import BallCanvas from "./Ball";
-export { BallCanvas };
+import EarthCanvas from "./Earth";
+export { EarthCanvas };
