@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EarthCanvas from "./canvas/earth";
+import EarthCanvas from "./canvas/Earth";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import Footer from "./Footer";
@@ -52,9 +52,9 @@ const Contact = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="absolute md:flex xs:hidden lg:w-[35%] lg:h-[75%] md:w-[30%] md:h-[75%] lg:mt-10 md:mt-0.2 lg:ml-[60%] md:ml-[65%] border-none border-red-500">
+                <motion.div initial = {{ opacity: 0, translateX: 100 }} animate = {{ opacity: view ? 1 : 0, translateX: view ? 0 : 100 }} transition={{ type: "spring", duration: 1.5, delay: 0.2}} className="absolute md:flex xs:hidden lg:w-[35%] lg:h-[75%] md:w-[30%] md:h-[75%] lg:mt-10 md:mt-0.2 lg:ml-[60%] md:ml-[65%] border-none border-red-500">
                     <EarthCanvas />
-                </div>
+                </motion.div>
             </div>
             <Footer space_above={1100} />
         </>
