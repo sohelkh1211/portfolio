@@ -27,10 +27,9 @@ const Earth = () => {
         return matches;
     }
     const isLarge = useMediaQuery("(min-width: 1024px)");
-    console.log("For lg device :- ",isLarge);
+    // console.log("For lg device :- ",isLarge);
     const isMedium = useMediaQuery("(min-width: 915px)");
-    console.log(isMedium);
-    const isSmall = useMediaQuery("(min-width: 650px)");
+    // console.log(isMedium);
 
     return (
         <primitive object={earth.scene} scale={`${isLarge ? 3.2 : isMedium ? 2.5 : 0 }`} position-y={0} rotation-y={0} />

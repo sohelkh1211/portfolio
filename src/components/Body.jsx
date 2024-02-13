@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
+import { TypeAnimation } from "react-type-animation";
 
 const Body = () => {
   return (
@@ -11,14 +11,16 @@ const Body = () => {
         <div className="h-4 w-4 rounded-full fun-gradient1" />
         <div className="violet-gradient h-8 w-1" />
       </motion.div>
-      <motion.div variants={fadeIn("left", "spring", 0.2, 1.5)}
+      <motion.div className="flex flex-row space-x-4" variants={fadeIn("left", "spring", 0.2, 1.5)}
         initial="hidden"
         animate="show">
         <h1 className="text-[50px] fun-gradient">Sohel</h1>
+        <h1 className="text-[48px] wave">👋</h1>
       </motion.div>
-      <motion.div className="container flex flex-wrap xs:flex-wrap xs:flex" variants={fadeIn("up", "spring", 0.4, 2)}
+      <motion.div className="container flex flex-col flex-wrap justify-between gap-y-3 xs:flex-wrap xs:flex" variants={fadeIn("up", "spring", 0.4, 2)}
         initial="hidden"
         animate="show">
+        <TypeAnimation sequence={['Web Developer',500,'ML Developer',500,'Data Analyst']} speed={{ type: 'keyStrokeDelayInMs', value: 80 }} deletionSpeed={80} cursor={false} repeat={Infinity}  className="fitness text-[30px] fun-gradient bg-clip-text text-transparent"/>
         <p className="text-[16px] fitness-about sm:max-w-[520px] xs:max-w-[245px] flex-row">
           Currently pursuing degree in AI & ML Engineering. Have interest in web
           development, Machine Learning
