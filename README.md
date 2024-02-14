@@ -1,6 +1,17 @@
 # Code Canvas - Personal Portfolio
 
 <h2>A portfolio template for developers 🧑‍💻</h2> 
+<!-- vscode-markdown-toc -->
+<h2>Table of Contents</h2>
+
+- [About](#About)
+- [Features](#features)
+- [Technologies Used](#technologies)
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
 
 <h2 id="About">About</h2>
 Hey there! 👋 I'm Sohel, a passionate web and ML developer. I always love to build user-friendly and visually appealing websites especially using ReactJs or NextJs and also love to learn technologies related to web and data science. I've built this portfolio because :- 
@@ -11,7 +22,7 @@ Hey there! 👋 I'm Sohel, a passionate web and ML developer. I always love to b
 **2. It's a Great First Impression For Employers.** <br />
 **3. Shows you’re more than just a resume.**
 
-<h2>Features</h2>
+<h2 id="features">Features</h2>
 
 ⚡Modern UI Design + Reveal Animations <br />
 ⚡Full Responsive <br />
@@ -19,7 +30,7 @@ Hey there! 👋 I'm Sohel, a passionate web and ML developer. I always love to b
 ⚡Utlizied Threejs JS library <br />
 ⚡Reusable UI components
 
-<h2>Technologies Used</h2>
+<h2 id="technologies">Technologies Used</h2>
 
 - **[React + Vitejs](https://vitejs.dev/guide/)** : Lightning-fast React development with Vitejs, the modern build tool for web development.
 - **[TailwindCSS](https://tailwindcss.com/docs/installation)** : Streamline your styling workflow with TailwindCSS, a utility-first CSS framework for building custom designs with ease.
