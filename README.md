@@ -12,7 +12,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-<a id="About"></a>
 <h2 id="About">About</h2>
 Hey there! 👋 I'm Sohel, a passionate web and ML developer. I always love to build user-friendly and visually appealing websites especially using ReactJs or NextJs and also love to learn technologies related to web and data science. I've built this portfolio because :- 
 <br />
