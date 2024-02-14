@@ -3,8 +3,18 @@
 <h2>A portfolio template for developers 🧑‍💻</h2> 
 <h2>Table of Contents</h2>
 
-- About
+- <a href="About">About</a>
+- Features
+- Technologies Used
 
+<h2 id="About">About</h2>
+Hey there! 👋 I'm Sohel, a passionate web and ML developer. I always love to build user-friendly and visually appealing websites especially using ReactJs or NextJs and also love to learn technologies related to web and data science. I've built this portfolio because :- 
+<br />
+<br />
+ 
+**1. It is a professional way to showcase work.** <br />
+**2. It's a Great First Impression For Employers.** <br />
+**3. Shows you’re more than just a resume.**
 
 <h2>Features</h2>
 
