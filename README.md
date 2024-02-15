@@ -7,6 +7,7 @@
 - [About](#About)
 - [Features](#features)
 - [Technologies Used](#technologies)
+- [Getting Started](#start)
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
@@ -36,4 +37,10 @@ Hey there! 👋 I'm Sohel, a passionate web and ML developer. I always love to b
 - **[Three.js](https://threejs.org/)** : Unlock the power of 3D graphics on the web with Three.js, a JavaScript library for creating stunning 3D visualizations and games.
 - **[Material UI](https://mui.com/material-ui/)** : Design beautiful, accessible, and responsive user interfaces with Material UI, a React UI framework based on Google's Material Design.
 - **[Framer Motion](https://www.framer.com/motion/)** : Bring your React components to life with Framer Motion, a production-ready motion library for creating fluid animations and interactive UIs.
+
+<h2 id="start">Getting Started 🚀</h2>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+<h2 id="pre">Prerequisites 📋</h2>
+You'll need <a href="https://git-scm.com/">Git</a> and 
 
