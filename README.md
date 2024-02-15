@@ -8,6 +8,9 @@
 - [Features](#features)
 - [Technologies Used](#technologies)
 - [Getting Started](#start)
+- [Prerequisites](#pre)
+- [How to use](#usage)
+- [Deployment](#deploy)
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
@@ -42,5 +45,57 @@ Hey there! 👋 I'm Sohel, a passionate web and ML developer. I always love to b
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 <h2 id="pre">Prerequisites 📋</h2>
-You'll need <a href="https://git-scm.com/">Git</a> and 
+You'll need <a href="https://git-scm.com/">Git</a> and <a href="https://nodejs.org/en/download/">Node.js</a> installed on your computer.
 
+<br />
+<br />
+
+```
+node@v16.4.2 or higher
+npm@7.18.1 or higher
+git@2.30.1 or higher
+```
+<h2 id="usage">How to use 🔧</h2>
+From your command line, first clone portfolio, Open up your command prompt in any directory and type following commands sequentially:
+
+<br />
+<br />
+
+```bash
+# Clone the repository
+$ git clone https://github.com/sohelkh1211/portfolio.git
+
+# Move into the repository
+$ cd portfolio
+
+# Remove the current origin repository
+$ git remote remove origin
+```
+
+After that, you can install the dependencies using NPM command.
+
+```bash
+# Install dependencies
+$ npm install --legacy-peer-deps
+
+# Start the development server
+$ npm run dev
+```
+
+Once your server has started, go to this url `http://localhost:5174/` to see the portfolio locally. It should look like the below screenshot.
+
+<h2 id="deploy">Deployment</h2>
+Once you finish your setup. You need to put your website online! <br />
+I highly recommend to use [Netlify](https://netlify.com) because it is super easy.
+<br />
+<br />
+
+Go to netlify and login with your Github account. After, successfully logged in:
+
+1. Click on `Add new site` then click on `Import an existing project`.
+2. Click on `Deploy with Github`.
+3. Select your repo, which you wanna deploy and it's done 👍.
+
+<h2>Status</h2>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a029bfd-575c-41e5-8249-c864d482c2e5/deploy-status)](https://app.netlify.com/sites/sohel1211/deploys/65cd6e87665f8c0008898cb6)
