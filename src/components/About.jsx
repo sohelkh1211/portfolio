@@ -62,7 +62,7 @@ const About = () => {
           <TypeAnimation sequence={[`I have a proven track record of designing and developing responsive, user-friendly websites. Apart from these, I'm also interested in working with complex datasets to extract meaningful insights.`]} speed={70} className='list-item pt-10'></TypeAnimation>
           <TypeAnimation sequence={[`In my free time, I enjoy watching mind-blowing Netflix web series and exploring new places and cultures that inspire me.`]} speed={50} className='list-item pt-10'></TypeAnimation>
         </div>
-        <div className='absolute flex lg:top-[280%] md:top-[310%] sm:top-[330%] xs:top-[550%] lg:ml-[36%] md:ml-[30%] sm:ml-[25%] xs:ml-[10%] w-fit pb-4 mb-1 border-none border-green-800'>
+        <div className='absolute flex lg:top-[280%] md:top-[310%] sm:top-[330%] xs:top-[490%] lg:ml-[36%] md:ml-[30%] sm:ml-[25%] xs:ml-[10%] w-fit pb-6 mb-1 border-none border-green-800'>
           <p className='sm:text-[35px] xs:text-[28px] thanks'>💫 Thanks for visiting 💫</p>
         </div>
       </div>

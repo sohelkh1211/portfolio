@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef } from "react";
+import { useInView } from "../constants/index.js";
 import { contact } from "../constants";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
@@ -10,22 +11,8 @@ import { TypeAnimation } from "react-type-animation";
 import Footer from "./Footer";
 
 const Contact = () => {
-    const [view, setView] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 2200) {
-                setView(true);
-            }
-            else {
-                setView(false);
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    });
+    const ref1 = useRef(null);
+    const view = useInView(ref1);
 
     return (
         <>
@@ -44,7 +31,7 @@ const Contact = () => {
                                 {/* <img src={`${contact.name === "sohelkh1211" ? 'GitHubIcon' : ''}`} /> */}
                                 <div className="flex sm:flex-row flex-wrap justify-between gap-x-2">
                                     {contact.name === "sohelkh1211" ? <GitHubIcon sx={{ fontSize: { sm: '30px', xs: '20px' } }} /> : contact.name === 'Sohel Khan' ? <MailIcon sx={{ fontSize: { sm: '30px', xs: '20px' } }} /> : contact.name === 'khan_sohel29' ? <InstagramIcon sx={{ fontSize: { sm: '30px', xs: '20px' } }} /> : contact.name === 'Khan Sohel' ? <LinkedInIcon sx={{ fontSize: { sm: '30px', xs: '20px' } }} /> : ''}
-                                    <motion.p initial={{ opacity: 0, translateX: (i + 1) % 2 === 0 ? 100 : -100, translateY: -80 }} animate={{ opacity: view ? 1 : 0, translateX: view ? 0 : (i + 1) % 2 === 0 ? 100 : -100, translateY: view ? 0 : -80 }} transition={{ type: "spring", duration: 0.5, delay: i * 0.6 }} className={`${contact.name === "Sohel Khan" || contact.name === "sohelkh1211" ? 'text-[#bf1598] lg:text-[22px] md:text-[20px] sm:text-[18px] xs:text-[15px] border-none border-black-200' : ''} ${contact.name === "Khan Sohel" ? 'text-[#bf1598] lg:text-[22px] md:text-[20px] sm:text-[18px] xs:text-[15px]' : ''} ${contact.name === "khan_sohel29" ? 'text-[#bf1598] lg:text-[22px] md:text-[18px] sm:text-[17px] xs:text-[15px]' : ''}`}>
+                                    <motion.p ref={ref1} initial={{ opacity: 0, translateX: (i + 1) % 2 === 0 ? 100 : -100, translateY: -80 }} animate={{ opacity: view ? 1 : 0, translateX: view ? 0 : (i + 1) % 2 === 0 ? 100 : -100, translateY: view ? 0 : -80 }} transition={{ type: "spring", duration: 0.5, delay: i * 0.6 }} className={`${contact.name === "Sohel Khan" || contact.name === "sohelkh1211" ? 'text-[#bf1598] lg:text-[22px] md:text-[20px] sm:text-[18px] xs:text-[15px] border-none border-black-200' : ''} ${contact.name === "Khan Sohel" ? 'text-[#bf1598] lg:text-[22px] md:text-[20px] sm:text-[18px] xs:text-[15px]' : ''} ${contact.name === "khan_sohel29" ? 'text-[#bf1598] lg:text-[22px] md:text-[18px] sm:text-[17px] xs:text-[15px]' : ''}`}>
                                         <a href={`${contact.link}`}>{contact.name}</a>
                                     </motion.p>
                                 </div>
@@ -52,7 +39,7 @@ const Contact = () => {
                         ))}
                     </ul>
                 </div>
-                <motion.div initial = {{ opacity: 0, translateX: 100 }} animate = {{ opacity: view ? 1 : 0, translateX: view ? 0 : 100 }} transition={{ type: "spring", duration: 1.5, delay: 0.2}} className="absolute md:flex xs:hidden lg:w-[35%] lg:h-[75%] md:w-[30%] md:h-[75%] lg:mt-10 md:mt-0.2 lg:ml-[60%] md:ml-[65%] border-none border-red-500">
+                <motion.div initial={{ opacity: 0, translateX: 100 }} animate={{ opacity: view ? 1 : 0, translateX: view ? 0 : 100 }} transition={{ type: "spring", duration: 1.5, delay: 0.2 }} className="absolute md:flex xs:hidden lg:w-[35%] lg:h-[75%] md:w-[30%] md:h-[75%] lg:mt-10 md:mt-0.2 lg:ml-[60%] md:ml-[65%] border-none border-red-500">
                     <EarthCanvas />
                 </motion.div>
             </div>

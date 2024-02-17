@@ -23,7 +23,7 @@ const ExperienceCard = ({ experience }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY >= 800 && window.scrollY <= 2100) {
+            if(window.scrollY >= 800 && window.scrollY <= 2500) {
                 setView(true);
             }
             else {

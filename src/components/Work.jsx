@@ -3,7 +3,8 @@ import { faReact } from '@fortawesome/free-brands-svg-icons'
 import { faSquareJs } from '@fortawesome/free-brands-svg-icons'
 import { faPython } from '@fortawesome/free-brands-svg-icons'
 import { motion } from 'framer-motion'
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useRef } from 'react'
+import { useInView } from '../constants/index.js'
 import numpy from '../assets/numpy.png'
 import pandas from '../assets/pandas.svg'
 import materialui from '../assets/material-ui.png'
@@ -24,28 +25,6 @@ const Work = () => {
     const ref2 = useRef(null);
     const ref3 = useRef(null);
 
-    const useInView = (ref) => {
-        const [isIntersect, setIsIntersect] = useState(false); // Initialize state variable to track visibility
-        // Create an IntersectionObserver object using useMemo to memoize it
-        const observer = useMemo(
-            () =>
-                new IntersectionObserver(([entry]) =>
-                    setIsIntersect(entry.isIntersecting),
-                ),
-            [],
-        );
-        // Observe the target element using useEffect
-        useEffect(() => {
-            // Since, we are using this function for multiple DOM elements i.e div. Hence, we used current.
-            observer.observe(ref.current);
-            // Cleanup function to disconnect the observer when component unmounts or ref changes
-            return () => {
-                observer.disconnect();
-            };
-        }, [observer]);
-
-        return isIntersect;
-    }
     const isInView1 = useInView(ref1);
     const isInView2 = useInView(ref2);
     const isInView3 = useInView(ref3);
