@@ -62,9 +62,28 @@ const Work = () => {
             <div className="relative flex top-[115px] lg:w-[33%] md:w-[45%] sm:w-[55%] xs:w-[70%] xs:mx-auto border-none border-green-900">
                 <TypeAnimation sequence={[`Here is the list 📃 of projects ✨ that I've built ⚒️ so far. Kindly take a look. Thank you 😊`]} cursor={false} speed={75} className="sm:text-[16px] tech-font xs:text-[14px]" />
             </div>
+            {/* Health Tracker App */}
+            <div className="relative flex flex-row flex-wrap top-[165px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mb-[40px] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl overflow-hidden">
+                <motion.div initial="hidden" animate="visible" variants={fade("left", "false", 0.4)} className='sm:absolute xs:relative flex container1 sm:w-[34%] sm:h-[110px] xs:w-[90%] xs:h-[180px] mt-[20px] sm:ml-[3%] xs:ml-[5%] rounded-xl overflow-hidden cursor-pointer'>
+                    <a href='https://main--health-tracker1.netlify.app/' target='_blank' rel="noopener noreferrer"><img src={Portfolio} className='w-full rounded-xl object-cover child' /></a>
+                </motion.div>
+                <motion.div initial="hidden" animate="visible" variants={fade("up", "false", 0.4)} className='relative flex flex-row items-center justify-between w-full mt-[20px] sm:ml-[40%] xs:ml-[5%] border-none border-sky-600'>
+                    <h1 className="font-bold fitness">Health Tracker App</h1>
+                    <div className='flex flex-row justify-between gap-x-2 sm:mr-4 xs:mr-2 border-none border-purple-800'>
+                        <FontAwesomeIcon className='w-[24px] h-full border-none border-black text-xl cursor-pointer' icon={faReact} />
+                        <FontAwesomeIcon className='w-[21px] h-full text-xl border-none border-black cursor-pointer' icon={faSquareJs} />
+                        <svg className='w-[25px] border-none border-black cursor-pointer' role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+                        </svg>
+                        <img src={materialui} className='w-[24px] h-[22px] cursor-pointer border-none border-emerald-700' />
+                    </div>
+                </motion.div>
+                <TypeAnimation sequence={[`This app helps fitness enthusiasts track their daily fitness activities, such as monitoring calorie intake and calories burnt, hydration levels, and sleep patterns through dashboard. It also provides personalized exercise recommendations based on user interests.`]} speed={90} cursor={false} className="sm:pl-[40%] xs:pl-[5%] pt-[2%] pb-[4%] lg:text-[14px] md:text-[14px] sm:text-[13px] xs:text-[15px] fitness-about" />
+            </div>
+            {/* Fitness Exercise Application */}
             <div ref={ref1} className="relative flex flex-row flex-wrap top-[165px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl overflow-hidden">
                 <motion.div initial="hidden" animate="visible" variants={fade("left", isInView1, 0.4)} className='sm:absolute xs:relative flex container1 sm:w-[34%] xs:w-[90%] md:h-[110px] mt-[20px] sm:ml-[3%] xs:mx-auto rounded-xl overflow-hidden cursor-pointer border-none border-black'>
-                    <a href='https://github.com/sohelkh1211/fitness-exercise-app' target='_blank' rel="noopener noreferrer" ><img src={Fitness} className='xs:w-full rounded-xl child' /></a>
+                    <a href='http://blackbox-gym.netlify.app/' target='_blank' rel="noopener noreferrer" ><img src={Fitness} className='xs:w-full rounded-xl child' /></a>
                 </motion.div>
                 <motion.div initial="hidden" animate="visible" variants={fade("up", "false", 0.4)} className='relative flex items-center justify-between w-full mt-[20px] sm:ml-[40%] xs:ml-[5%] overflow-hidden border-none border-green-500'>
                     <h1 className="font-bold fitness">Fitness Exercise App</h1>
@@ -98,7 +117,7 @@ const Work = () => {
             </div>
             <div ref={ref2} className="relative flex flex-row flex-wrap top-[235px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl overflow-hidden">
                 <motion.div initial="hidden" animate="visible" variants={fade("left", isInView2, 0.4)} className='sm:absolute xs:relative flex sm:w-[34%] lg:h-[110px] md:h-[100px] sm:h-[100px] xs:h-[190px] xs:w-[90%] mt-[20px] sm:ml-[3%] xs:mx-auto container1 rounded-xl overflow-hidden border-none border-pink-500 cursor-pointer'>
-                    <a href='https://github.com/sohelkh1211/Plant-Disease-Classification' target='_blank' rel="noopener noreferrer"><img src={Plant} className='w-full h-full object-cover rounded-xl child' /></a>
+                    <a href='https://plant-disease-classification.netlify.app/' target='_blank' rel="noopener noreferrer"><img src={Plant} className='w-full h-full object-cover rounded-xl child' /></a>
                 </motion.div>
                 <motion.div initial="hidden" animate="visible" variants={fade("up", isInView2, 0.4)} className='relative flex flex-row w-full items-center justify-between mt-[20px] sm:ml-[40%] xs:ml-[5%] border-none border-green-600'>
                     <h1 className="font-bold fitness">Plant Disease Classification</h1>
