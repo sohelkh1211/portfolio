@@ -8,6 +8,7 @@ import { useInView } from '../constants/index.js'
 import numpy from '../assets/numpy.png'
 import pandas from '../assets/pandas.svg'
 import materialui from '../assets/material-ui.png'
+import tracker from '../assets/tracker.png'
 import rapid from '../assets/rapid-api.svg'
 import tensor from '../assets/tensorflow.png'
 import House from '../assets/House.png'
@@ -65,7 +66,7 @@ const Work = () => {
             {/* Health Tracker App */}
             <div className="relative flex flex-row flex-wrap top-[165px] lg:w-[50%] md:w-[60%] sm:w-[70%] xs:w-[80%] mb-[40px] mx-auto shadow-md bg-gradient-to-br from-[#f9e5de] to-[#fedcfe] rounded-xl overflow-hidden">
                 <motion.div initial="hidden" animate="visible" variants={fade("left", "false", 0.4)} className='sm:absolute xs:relative flex container1 sm:w-[34%] sm:h-[110px] xs:w-[90%] xs:h-[180px] mt-[20px] sm:ml-[3%] xs:ml-[5%] rounded-xl overflow-hidden cursor-pointer'>
-                    <a href='https://main--health-tracker1.netlify.app/' target='_blank' rel="noopener noreferrer"><img src={Portfolio} className='w-full rounded-xl object-cover child' /></a>
+                    <a href='https://main--health-tracker1.netlify.app/' target='_blank' rel="noopener noreferrer"><img src={tracker} className='w-full rounded-xl object-cover child' /></a>
                 </motion.div>
                 <motion.div initial="hidden" animate="visible" variants={fade("up", "false", 0.4)} className='relative flex flex-row items-center justify-between w-full mt-[20px] sm:ml-[40%] xs:ml-[5%] border-none border-sky-600'>
                     <h1 className="font-bold fitness">Health Tracker App</h1>
